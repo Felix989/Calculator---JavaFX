@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="404.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Weight">
+   <children>
+      <GridPane layoutY="152.0" prefHeight="252.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="152.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="138.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="314.0" minHeight="10.0" prefHeight="145.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="from_field" prefHeight="142.0" prefWidth="333.0" promptText="Metrical" style="-fx-background-color: #3f3b3b;">
+               <font>
+                  <Font name="Consolas Bold" size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="to_field" prefHeight="179.0" prefWidth="200.0" promptText="Imperical" style="-fx-background-color: #3f3b3b;" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Consolas Bold" size="21.0" />
+               </font>
+            </TextField>
+            <Button fx:id="convert_button" defaultButton="true" mnemonicParsing="false" onAction="#convert_pushed" prefHeight="152.0" prefWidth="200.0" style="-fx-background-color: #3f3b3b;" text="Convert" textAlignment="CENTER" textFill="#feb062" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Consolas Bold" size="35.0" />
+               </font></Button>
+            <Spinner fx:id="from_spinner" prefHeight="175.0" prefWidth="375.0" style="-fx-background-color: #3f3b3b; -fx-base: #3f3b3b;" GridPane.columnIndex="1" />
+            <Spinner fx:id="to_spinner" prefHeight="197.0" prefWidth="321.0" style="-fx-background-color: #3f3b3b; -fx-base: #3f3b3b;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="swap_button" mnemonicParsing="false" onAction="#swap_pushed" prefHeight="210.0" prefWidth="451.0" style="-fx-background-color: #3f3b3b;" text="Swap" textAlignment="CENTER" textFill="#f87979" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Consolas Bold" size="35.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <TextField fx:id="range_textfield" editable="false" prefHeight="155.0" prefWidth="600.0" promptText="Range Converter" style="-fx-background-color: #3f3b3b;">
+         <font>
+            <Font name="Consolas Bold" size="33.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
