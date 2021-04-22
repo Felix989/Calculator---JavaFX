@@ -10,16 +10,11 @@ import java.io.IOException;
 
 @WebServlet("/calc")
 public class CalculatorServlet extends HttpServlet{
-
-
-
-
     @Override
     public void init() throws ServletException {
         super.init();
         System.out.println(this.getServletName() + " initted");
     }
-
 
     @Override
     public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
@@ -46,11 +41,31 @@ public class CalculatorServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int firstNumber = Integer.parseInt(req.getParameter("firstNumber"));
-        int secondNumber = Integer.parseInt(req.getParameter("secondNumber"));
+        float firstNumber = Integer.parseInt(req.getParameter("firstNumber"));
+        float secondNumber = Integer.parseInt(req.getParameter("secondNumber"));
+        float sum = 0;
+        String operator = String.valueOf(req.getParameter("operator"));
 
-        int sum = (firstNumber + secondNumber);
+        if(operator.equals("+")){
+            sum = (firstNumber + secondNumber);
+        }
 
-        resp.getWriter().println("sum of the first and second number" + sum);
+
+        if(operator.equals("-")){
+            sum = (firstNumber - secondNumber);
+        }
+
+
+        if(operator.equals("*")){
+            sum = (firstNumber * secondNumber);
+        }
+
+
+        if(operator.equals("/")){
+            sum = (firstNumber / secondNumber);
+        }
+        //resp.getWriter().println("sum of the first and second number" + sum);
+        req.setAttribute("sum", sum);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 }

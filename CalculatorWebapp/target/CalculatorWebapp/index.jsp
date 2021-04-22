@@ -91,7 +91,9 @@
 				<tr class = "nums">
       					<td onclick="sendNum('.')">.</td>
 					<td onclick="sendNum('0')">0</td>
-					<td onclick="equalTo()">=</td>
+            <form action = "calc" method = "post">
+					<td onclick="equalTo()" type = "submit" value = "Calculate" >=</td>
+            </form>
 				</tr>
 			</tbody>
 		</table>
