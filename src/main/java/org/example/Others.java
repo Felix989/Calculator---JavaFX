@@ -36,15 +36,19 @@ public class Others implements Initializable {
         SecondNumber.setCellValueFactory(new PropertyValueFactory<>("SecondNumber"));
         Operation.setCellValueFactory(new PropertyValueFactory<>("Operation"));
         Result.setCellValueFactory(new PropertyValueFactory<>("Result"));
-        ObservableList<ResultClass> data = FXCollections.observableArrayList();
+       // ObservableList<ResultClass> data; = ;
         //ResultClass rc = new ResultClass(1.0,1.0,"add",2.0);//default element for testing
         //data.add(rc);
 
         //ObservableList<ResultClass> holder_two = DBController.getResults();
-        data = DBController.getResults();
+        ObservableList<ResultClass> data = DBController.getResults();
 
-        Table.setItems(data);
-        Table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        Table.setItems(FXCollections.observableList(data));
+        //Table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        //FirstNumber.setCellValueFactory(features -> features.getValue());
+        //SecondNumber.setCellValueFactory();
+        //Operation.setCellValueFactory();
+        //Result.setCellValueFactory();
         //Table.getColumns().addAll(FirstNumber, SecondNumber, Operation, Result);
 
 

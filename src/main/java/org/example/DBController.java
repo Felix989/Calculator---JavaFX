@@ -54,23 +54,22 @@ public class DBController {
             ps = con.prepareStatement(query);
             rs = ps.executeQuery();
             while(rs.next()){
-                /*
+
                 System.out.println(rs.getString("FirstNumber") + " " +
                         rs.getString("SecondNumber") + " " +
                         rs.getString("Operation"));
-                */
 
-                ResultClass rc = new ResultClass(Double.parseDouble(rs.getString("FirstNumber")),
-                        Double.parseDouble(rs.getString("SecondNumber")),
+
+                ResultClass rc = new ResultClass(rs.getDouble("FirstNumber"),
+                        rs.getDouble("SecondNumber"),
                         rs.getString("Operation"),
                         0.0);//needs to be calculated later
-
+/*
                 System.out.println(ResultClass.getFirstNumber() + " | " +
-                        ResultClass.getSecondNumber() + " | " +
                         ResultClass.getSecondNumber() + " | " +
                         ResultClass.getResult() + " | " +
                         ResultClass.getOperation());
-
+ */
                 data.add(rc);
             }
             if (con != null) {
