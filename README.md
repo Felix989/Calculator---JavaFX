@@ -1,6 +1,6 @@
 ~~~ Calculator ~~~
 
-->Képesz alapvető műveletekre
+->Képes alapvető műveletekre
 	-addíció
 	-szubtrakció
 	-multiplikáció
